@@ -1,0 +1,126 @@
+<html>
+    <head>
+         <title>lost </title>
+
+           <link rel="stylesheet" href="l.css">
+           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+         </head>
+<body>
+<div class="form-box" data-tilt>
+
+<h1>Change Here</h1>
+<form action="p.php" method="post">
+<div class="input-box">
+<i class="fa fa-user-o"></i>
+<input type="email" placeholder="Username" name="username" id="email">
+</div>
+<div class="input-box">
+<i class="fa fa-key"></i>
+<input type="password" placeholder="Password" name="password" id="myInput">
+<span class="eye" onclick="myFunction()">
+<i id="hide1"class="fa fa-eye "></i>
+<i id="hide2"class="fa fa-eye-slash"></i>
+</span>
+</div>
+
+<div class="input-box">
+<i class="fa fa-key"></i>
+<input type="password" placeholder="Re-Enter password" name="cpassword" id="lmyInput" >
+<span class="eye" onclick="myFunction1()">
+<i id="hide3"class="fa fa-eye"></i>
+<i id="hide4"class="fa fa-eye-slash"></i>
+</span>
+</div>
+<div id="myDIV">
+<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+password do not match 
+</div>
+<div id="myDIV1">
+<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+ enter valid password or email
+</div>
+
+<button onclick="myfun()" type="button" class="login-btn">SUBMIT</button>
+
+</form>
+</div>
+
+
+<script>
+function myfun(){
+let password = document.getElementById("myInput").value;
+let cnfrmPassword = document.getElementById("lmyInput").value;
+let y = document.getElementById("myDIV");
+let l = document.getElementById("myDIV1");
+console.log(password,cnfrmPassword);
+let message = document.getElementById("message");
+
+const hasNumber = /[0-9]/.test(password);
+  const hasUpper = /[A-Z]/.test(password);
+  const hasLower = /[a-z]/.test(password);
+  const isLengthValid = password.length >= 8;
+if(hasNumber && hasUpper && hasLower && isLengthValid)
+{
+if (password.length!=0)
+{
+if(password==cnfrmPassword)
+{
+document.location.href="file:///C:/Users/SUBHAM/OneDrive/Documents/html/var.htm";
+
+}
+else{
+y.style.display= "block";
+}
+}
+}
+else{l.style.display= "block";
+}
+
+
+}
+    
+function myFunction(){
+var x= document.getElementById("myInput");
+var y= document.getElementById("hide1");
+var z= document.getElementById("hide2");
+if(x.type === 'password')
+{
+x.type = "text";
+y.style.display= "block";
+z.style.display= "none";
+}
+else
+{
+x.type = "password";
+y.style.display= "none";
+z.style.display= "block";
+}
+}
+function myFunction1(){
+var l= document.getElementById("lmyInput");
+var m= document.getElementById("hide3");
+var n= document.getElementById("hide4");
+if(l.type === 'password')
+{
+l.type = "text";
+m.style.display= "block";
+n.style.display= "none";
+}
+else
+{
+l.type = "password";
+m.style.display= "none";
+n.style.display= "block";
+}
+}
+
+
+</script>
+
+</script>
+<script
+src="tilt.js"></script>
+
+
+</html>
